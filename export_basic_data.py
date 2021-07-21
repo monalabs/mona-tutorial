@@ -2,6 +2,7 @@ import logging
 import os
 
 from mona_sdk.client import Client, MonaSingleMessage
+
 from util import read_dicts_from_zip
 
 # Get your Mona api_key and secret.
