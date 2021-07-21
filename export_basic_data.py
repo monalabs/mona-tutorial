@@ -75,7 +75,7 @@ for single_day_data_file_name in [
             )
         )
 
-    logging.info(f"Exporting a batch of {len(loans_cases_data_to_send)}")
     # Export batch to Mona's servers.
+    logging.info(f"Exporting a batch of {len(loans_cases_data_to_send)}")
     export_result = my_mona_client.export_batch(loans_cases_data_to_send)
     logging.info(f"Export result is: {export_result}")

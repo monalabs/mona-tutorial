@@ -3,9 +3,9 @@ import os
 
 from mona_sdk.client import Client, MonaSingleMessage
 
-# Get your Mona api_key and secret.
 from util import read_dicts_from_zip
 
+# Get your Mona api_key and secret.
 api_key = os.environ.get("MONA_API_KEY", "")
 secret = os.environ.get("MONA_SECRET", "")
 
