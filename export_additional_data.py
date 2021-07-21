@@ -20,13 +20,10 @@ my_logger.setLevel("INFO")
 for single_day_data_file_name in [
     file for file in os.listdir("loans_paid_back_stat") if file.endswith(".gzip")
 ]:
-    # Get the data from the current file.
     loans_return_status_data = read_dicts_from_zip(
         f"loans_paid_back_stat/{single_day_data_file_name}"
     )
 
-    # loans_return_status_data_to_send will hold all MonaSingleMessages with the
-    # features we want to export to mona.
     loans_return_status_data_to_send = []
 
     for single_loan_data in loans_return_status_data:

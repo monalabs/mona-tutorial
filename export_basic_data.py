@@ -32,10 +32,12 @@ for single_day_data_file_name in [
     # Now, loans_cases_data is a list of dicts, where each dict represent a single case
     # of a loan.
 
+    # loans_cases_data_to_send will hold all MonaSingleMessages with the features we
+    # want to export to mona.
     loans_cases_data_to_send = []
     for single_loan_data in loans_cases_data:
         loans_cases_data_to_send.append(
-            # Create a MonaSingleMessage for each event.
+            # Create a MonaSingleMessage for each loan dict.
             MonaSingleMessage(
                 # The message field should be a dict containing all feature we want to
                 # monitor.
@@ -67,9 +69,9 @@ for single_day_data_file_name in [
                     if key in single_loan_data
                 },
                 contextClass="RISK_MONITORING",
-                # contextID should be a unique identifier of each loan case, later
-                # when we'll add additional information for a specific loan, we'll
-                # use the same id so Mona's servers can aggregate them properly.
+                # contextID should be a unique identifier of each loan case, later when
+                # we'll add additional information for a specific loan, we'll use the
+                # same id so Mona's servers can aggregate them to a single loan.
                 contextId=single_loan_data["id"],
                 exportTimestamp=single_loan_data["timestamp"],
             )
