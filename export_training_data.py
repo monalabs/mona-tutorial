@@ -59,7 +59,7 @@ for training_file_name in [
             )
         )
 
-    # Export batch to Mona's servers.
+    # Export the batch to Mona's servers.
     logging.info(f"Exporting a batch of {len(training_data_to_send)}")
     export_result = my_mona_client.export_batch(training_data_to_send)
     logging.info(f"Export result is: {export_result}")
