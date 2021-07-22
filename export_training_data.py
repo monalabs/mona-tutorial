@@ -15,6 +15,8 @@ my_mona_client = Client(api_key, secret)
 logger = logging.getLogger()
 logger.setLevel("INFO")
 
+context_class_name = os.environ.get("CONTEXT_CLASS_NAME", "LOAN_APPLICATION_TUTORIAL")
+
 # Send the training data (train and test) for both of our model versions.
 for training_file_name in [
     file for file in os.listdir("training") if file.endswith(".gzip")
@@ -53,7 +55,7 @@ for training_file_name in [
                     ]
                     if key in single_loan_data
                 },
-                contextClass="RISK_MONITORING",
+                contextClass=context_class_name,
                 contextId=single_loan_data["id"],
                 exportTimestamp=single_loan_data["timestamp"],
             )
