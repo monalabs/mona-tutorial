@@ -17,7 +17,7 @@ my_logger.setLevel("INFO")
 
 context_class_name = os.environ.get("CONTEXT_CLASS_NAME", "LOAN_APPLICATION_TUTORIAL")
 
-# Send additional information: was the loan returned on time or not.
+# Send the feedback information: was the loan returned on time or not.
 for single_day_data_file_name in [
     file for file in os.listdir("loans_feedback_status") if file.endswith(".gzip")
 ]:

@@ -20,7 +20,7 @@ logger.setLevel("INFO")
 mona_logger = logging.getLogger("mona-logger")
 mona_logger.setLevel("WARNING")
 
-# You can set the context class name using this env var.
+# You can set the context class name using "CONTEXT_CLASS_NAME" env var.
 context_class_name = os.environ.get("CONTEXT_CLASS_NAME", "LOAN_APPLICATION_TUTORIAL")
 
 # We'll send the inference time data, one file (containing a list of dicts) per day,
