@@ -51,7 +51,7 @@ for training_file_name in [
                         "feature_9",
                         "stage",
                         "model_version",
-                        "loan_paid_back",
+                        "label",
                     ]
                     if key in single_loan_data
                 },
