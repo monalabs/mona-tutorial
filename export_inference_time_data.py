@@ -51,7 +51,7 @@ for single_day_data_file_name in [
                         "city",
                         "state",
                         "purpose",
-                        "risk_score",
+                        "credit_score",
                         "loan_taken",
                         "return_until",
                         "offered_amount",
